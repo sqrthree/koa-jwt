@@ -12,10 +12,12 @@ interface JWTOptions {
   stateName?: string
 }
 
-export default function jwtMiddleware(options: JWTOptions): Koa.Middleware {
+export function jwtMiddleware(options: JWTOptions): Koa.Middleware {
   return async function jwt(ctx: Koa.Context, next: Koa.Next): Promise<void> {
     if (!ctx.headers.authorization) {
-      ctx.throw(401, 'The request is missing an authentication token')
+      ctx.throw(401, 'The request is missing an authentication token', {
+        code: 'BEARER_TOKEN_REQUIRED',
+      })
     }
 
     const token = ctx.headers.authorization.substring('Bearer '.length)
