@@ -29,15 +29,7 @@ export function jwtMiddleware(options: JWTOptions): Koa.Middleware {
     }
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    let payload: Record<string, any> = {}
-
-    try {
-      payload = await parseTokenWithoutVerify(token)
-    } catch (err) {
-      ctx.throw(400, 'Cannot parse token payload from request header', {
-        code: 'BEARER_TOKEN_INVALID',
-      })
-    }
+    let payload: Record<string, any> = await parseTokenWithoutVerify(token)
 
     let secret: string | undefined
 
