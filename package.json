@@ -1,0 +1,36 @@
+{
+  "name": "koa-jwt",
+  "version": "0.1.0",
+  "description": "A jwt middleware for Koa",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsc --watch",
+    "prebuild": "npm run lint",
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
+    "lint": "npm run type-check",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sqrthree/koa-jwt.git"
+  },
+  "keywords": [],
+  "author": "sqrtthree <imsqrtthree@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sqrthree/koa-jwt/issues"
+  },
+  "homepage": "https://github.com/sqrthree/koa-jwt#readme",
+  "dependencies": {
+    "@sqrtthree/wrapped-jwt": "~0.3.1",
+    "koa": "~2.13.1",
+    "lodash": "~4.17.21"
+  },
+  "devDependencies": {
+    "@sqrtthree/tsconfig": "~1.0.0",
+    "@types/koa": "~2.13.4",
+    "@types/lodash": "~4.14.171",
+    "typescript": "~4.3.5"
+  }
+}
