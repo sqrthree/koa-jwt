@@ -1,5 +1,5 @@
 {
-  "name": "@sqrtthree@koa-jwt",
+  "name": "@sqrtthree/koa-jwt",
   "version": "0.1.0",
   "description": "A jwt middleware for Koa",
   "main": "dist/index.js",
