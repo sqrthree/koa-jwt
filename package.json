@@ -13,6 +13,12 @@
     "test:cov": "nyc npm run test",
     "prepublishOnly": "npm run build"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sqrthree/koa-jwt.git"
